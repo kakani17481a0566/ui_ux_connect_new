@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
 import { authService } from '../../api/authService';
+import usernameIcon from '../../assets/icons/username_vibrant_transparent_180x180.png';
+import passwordIcon from '../../assets/icons/password_vibrant_transparent_180x180.png';
+import loginIcon from '../../assets/icons/login_vibrant_transparent_180x180.png';
 
 export const LoginForm = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('cha77026');
@@ -51,7 +54,7 @@ export const LoginForm = ({ onLoginSuccess }) => {
         id="login-username"
         label="Username or Email"
         placeholder="Enter username"
-        icon="person"
+        imageIcon={usernameIcon}
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         required
@@ -62,7 +65,7 @@ export const LoginForm = ({ onLoginSuccess }) => {
         label="Password"
         type="password"
         placeholder="Enter password"
-        icon="lock"
+        imageIcon={passwordIcon}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
@@ -81,7 +84,7 @@ export const LoginForm = ({ onLoginSuccess }) => {
         type="submit"
         isLoading={isLoading}
         loadingText="Authenticating..."
-        className="mt-2 w-full bg-[#38b6ff] hover:bg-[#2aa8f0] text-white shadow-md py-3 text-base font-bold rounded-xl"
+        className="mt-2 w-full bg-[#38b6ff] hover:bg-[#2aa8f0] text-white shadow-md py-3 text-base font-bold rounded-xl flex items-center justify-center gap-2"
       >
         <span className="material-symbols-outlined text-[20px]">login</span>
         <span>Login to Portal</span>
@@ -89,3 +92,5 @@ export const LoginForm = ({ onLoginSuccess }) => {
     </form>
   );
 };
+
+export default LoginForm;

@@ -9,6 +9,7 @@ export const Input = React.forwardRef(({
   id,
   type = 'text',
   icon,
+  imageIcon,
   rightElement,
   error,
   actionLink,
@@ -34,11 +35,13 @@ export const Input = React.forwardRef(({
       )}
 
       <div className="relative flex items-center w-full">
-        {icon && (
+        {imageIcon ? (
+          <img src={imageIcon} alt="" className="absolute left-3 w-6 h-6 object-contain pointer-events-none" />
+        ) : icon ? (
           <span className="absolute left-3.5 text-outline pointer-events-none material-symbols-outlined text-[20px]">
             {icon}
           </span>
-        )}
+        ) : null}
 
         <input
           ref={ref}
@@ -47,7 +50,7 @@ export const Input = React.forwardRef(({
           className={cn(
             "w-full h-11 bg-surface-container-low rounded-lg text-sm text-on-surface placeholder:text-outline/70 transition-all",
             "focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container",
-            icon ? "pl-11" : "pl-3.5",
+            (icon || imageIcon) ? "pl-11" : "pl-3.5",
             (isPassword || rightElement) ? "pr-11" : "pr-3.5",
             error && "ring-2 ring-error/50 bg-error/5",
             className
