@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>NeuroPi Connect - Daily School Home Connect</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons for crisp UI symbols -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              500: '#00A3C4',
+              600: '#0284C7',
+              700: '#0369A1',
+              900: '#0C4A6E',
+            },
+            appBg: '#F3F7FB',
+            cardBg: '#FFFFFF',
+          },
+          boxShadow: {
+            soft: '0 4px 20px -2px rgba(18, 55, 102, 0.06)',
+            subtle: '0 2px 8px rgba(0, 0, 0, 0.04)',
+            cardHover: '0 8px 24px -4px rgba(0, 90, 160, 0.08)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: Layout, iOS Frame & Scrollbars -->
+<style data-purpose="layout-and-scroll">
+    body {
+      background-color: #E2E8F0;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    /* Hide scrollbar for clean app experience */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<!-- Custom Styles: Soft Badges and Gradients -->
+<style data-purpose="card-accents">
+    .status-card {
+      background: #FFFFFF;
+      border: 1px solid #EAF0F6;
+      border-radius: 1rem;
+      transition: all 0.2s ease;
+    }
+    .try-home-gradient {
+      background: linear-gradient(135deg, #FFF9EB 0%, #FEF3C7 100%);
+      border: 1px solid #FDE68A;
+    }
+    .explore-card {
+      background: #FFFFFF;
+      border: 1px solid #E2EBF4;
+      border-radius: 1.25rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-0 sm:p-4">
+<!-- BEGIN: MobileFrameContainer -->
+<!-- Constrained iOS Device Wrapper with Dynamic Island and Status Bar -->
+<div class="w-full sm:max-w-[420px] bg-appBg min-h-screen sm:min-h-[880px] sm:h-[910px] sm:rounded-[44px] shadow-2xl overflow-hidden flex flex-col relative border-0 sm:border-[8px] sm:border-slate-800" data-purpose="mobile-viewport">
+<!-- BEGIN: iOSStatusBar -->
+<header class="w-full pt-3 px-7 pb-1 flex justify-between items-center bg-appBg z-30 select-none" data-purpose="ios-status-bar">
+<span class="text-xs font-semibold text-slate-800">9:41</span>
+<!-- Dynamic Island Pill for iPhone simulated frame -->
+<div class="hidden sm:block w-24 h-4 bg-slate-900 rounded-full mx-auto"></div>
+<div class="flex items-center space-x-1.5 text-slate-800">
+<i class="fa-solid fa-signal text-[11px]"></i>
+<i class="fa-solid fa-wifi text-[11px]"></i>
+<i class="fa-solid fa-battery-full text-xs"></i>
+</div>
+</header>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: AppTopNavigation -->
+<div class="px-5 py-2.5 flex items-center justify-between bg-appBg border-b border-slate-100/80 sticky top-0 z-20" data-purpose="top-navigation-bar">
+<div class="flex items-center space-x-2.5">
+<div class="w-9 h-9 rounded-xl bg-blue-500/10 flex items-center justify-center text-brand-600 shadow-sm">
+<i class="fa-solid fa-house-chimney text-base"></i>
+</div>
+<h1 class="text-[17px] font-bold text-slate-800 tracking-tight">Hello, Ananya's Family</h1>
+</div>
+<div class="flex items-center space-x-2">
+<!-- Notification Bell with Ping -->
+<button aria-label="Notifications" class="w-9 h-9 rounded-xl bg-white border border-slate-200/80 flex items-center justify-center text-slate-600 relative hover:text-brand-600 shadow-subtle">
+<i class="fa-regular fa-bell text-base"></i>
+<span class="w-2 h-2 rounded-full bg-rose-500 absolute top-2 right-2 ring-2 ring-white"></span>
+</button>
+</div>
+</div>
+<!-- END: AppTopNavigation -->
+<!-- BEGIN: ScrollableAppContent -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-4 pt-3 pb-24 space-y-3.5" data-purpose="feed-container">
+<!-- BEGIN: StudentProfileCard -->
+<section class="status-card p-3.5 flex items-center justify-between shadow-soft" data-purpose="child-profile-header">
+<div class="flex items-center space-x-3.5">
+<!-- Child Avatar with Soft Border -->
+<div class="relative">
+<div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-brand-500 ring-offset-2 ring-offset-white shadow-sm bg-brand-50">
+<img alt="Ananya Sharma" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOHV0wuLB_n2Dqd-LR1MYGFMUxjFFU8eF2O6rIuVMrjrVkDvkebyCoLKcgxtEiAelojCHjyhOudZ5LSEfIlEVZ2GGfeLJMCAU07_XCQ21qLOJyjL6qp6tyxsIBW9CzPYJgOdoGjryRmnufls2Nj_12Vgsqyv6BGjYfeyNJSKf2tQLwvb0VAZl_aYwfjUggbNSraXZaaiD-czhrnbqsaRPhnH7Gzj5mYHOfhGUD10n28QdVeB10fM0Gcw"/>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full"></span>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<h2 class="text-base font-bold text-slate-800 leading-tight">Ananya Sharma</h2>
+</div>
+<p class="text-xs font-medium text-slate-500 mt-0.5">Pre-Kindergarten</p>
+<div class="flex items-center space-x-1.5 text-[11px] font-semibold text-brand-600 mt-1">
+<i class="fa-regular fa-calendar text-[10px]"></i>
+<span>May 26, 2025 • Today</span>
+</div>
+</div>
+</div>
+<!-- Partnership Logo Badge -->
+<div class="flex flex-col items-end justify-center pl-2">
+<div class="h-6 opacity-90">
+<img alt="NeuroPi" class="h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEzAZB7-KAWxpTZkj0XDHJYnIJU-ZVCgVfILc46DFuB6QBYxeYev4bwJVukVSjdA8Ol0Gzi8uRTzorjFVBu5MJySG8Bw5lTpBF984bl-tvJQt0roxCm4hpj0sfFYHa2HWQFxI6bvRh_vuQqNHmKjnd0oxCzyVv6wltx-07KyNpQvRRcfw4NtbFe_I6OkwlQN5g6jo5uFKHUvxKF9m0cd0stkanWN2_YdtkiziHIYhY87tpuaYSaHOHGmcLUvCd2ai6J-A"/>
+</div>
+<span class="text-[9px] font-extrabold text-blue-600 uppercase tracking-wider mt-0.5">MY SCHOOL ITALY</span>
+</div>
+</section>
+<!-- END: StudentProfileCard -->
+<!-- BEGIN: AttendanceWidget -->
+<section class="bg-white rounded-2xl p-3 border border-emerald-100 shadow-subtle flex items-center space-x-3" data-purpose="attendance-summary">
+<div class="w-9 h-9 rounded-xl bg-emerald-500 flex items-center justify-center text-white text-base shadow-sm shrink-0">
+<i class="fa-solid fa-check"></i>
+</div>
+<div class="flex-1 text-xs">
+<span class="font-bold text-slate-800 block text-xs">Attendance</span>
+<div class="text-slate-600 font-medium text-[11px] mt-0.5">
+            Arrived: <span class="text-emerald-700 font-semibold">9:05 AM</span>  •  Departed: <span class="text-slate-400">–</span>
+</div>
+</div>
+<span class="px-2 py-0.5 text-[10px] font-bold tracking-wide rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200 uppercase">Present</span>
+</section>
+<!-- END: AttendanceWidget -->
+<!-- BEGIN: DailyRoutineIndicators -->
+<section class="grid grid-cols-5 gap-1.5" data-purpose="quick-metrics-row">
+<!-- Meals Indicator -->
+<div class="bg-white rounded-2xl p-2 flex flex-col items-center justify-between text-center border border-slate-100 shadow-subtle h-24">
+<div class="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 text-sm">
+<i class="fa-solid fa-utensils"></i>
+</div>
+<div>
+<span class="text-[10px] font-medium text-slate-400 block leading-tight">Meals</span>
+<span class="text-[11px] font-bold text-slate-800 block mt-0.5 leading-tight">Ate well 😊</span>
+</div>
+</div>
+<!-- Water Indicator -->
+<div class="bg-white rounded-2xl p-2 flex flex-col items-center justify-between text-center border border-slate-100 shadow-subtle h-24">
+<div class="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 text-sm">
+<i class="fa-solid fa-bottle-water"></i>
+</div>
+<div>
+<span class="text-[10px] font-medium text-slate-400 block leading-tight">Water</span>
+<span class="text-[11px] font-bold text-slate-800 block mt-0.5 leading-tight">3 glasses 😊</span>
+</div>
+</div>
+<!-- Sleep / Nap Indicator -->
+<div class="bg-white rounded-2xl p-2 flex flex-col items-center justify-between text-center border border-slate-100 shadow-subtle h-24">
+<div class="w-9 h-9 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 text-sm">
+<i class="fa-solid fa-moon"></i>
+</div>
+<div>
+<span class="text-[10px] font-medium text-slate-400 block leading-tight">Sleep/Nap</span>
+<span class="text-[11px] font-bold text-slate-800 block mt-0.5 leading-tight">45 mins 😊</span>
+</div>
+</div>
+<!-- Toileting Indicator -->
+<div class="bg-white rounded-2xl p-2 flex flex-col items-center justify-between text-center border border-slate-100 shadow-subtle h-24">
+<div class="w-9 h-9 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600 text-sm">
+<i class="fa-solid fa-toilet-paper"></i>
+</div>
+<div>
+<span class="text-[10px] font-medium text-slate-400 block leading-tight">Toileting</span>
+<span class="text-[11px] font-bold text-slate-800 block mt-0.5 leading-tight">Yes 😊</span>
+</div>
+</div>
+<!-- Mood Indicator -->
+<div class="bg-white rounded-2xl p-2 flex flex-col items-center justify-between text-center border border-slate-100 shadow-subtle h-24">
+<div class="w-9 h-9 rounded-xl bg-rose-50 flex items-center justify-center text-rose-500 text-sm">
+<i class="fa-solid fa-heart"></i>
+</div>
+<div>
+<span class="text-[10px] font-medium text-slate-400 block leading-tight">Mood</span>
+<span class="text-[11px] font-bold text-slate-800 block mt-0.5 leading-tight">Happy 😊</span>
+</div>
+</div>
+</section>
+<!-- END: DailyRoutineIndicators -->
+<!-- BEGIN: LearningExplorationCard -->
+<section class="explore-card p-4 shadow-soft" data-purpose="learning-activity">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-brand-600">Today I explored:</span>
+<span class="px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-bold">Science Discovery</span>
+</div>
+<h3 class="text-lg font-extrabold text-slate-900 tracking-tight mb-3">Floating &amp; Sinking</h3>
+<div class="grid grid-cols-12 gap-3 items-center">
+<!-- Left details column -->
+<div class="col-span-7 space-y-3">
+<div>
+<p class="text-[11px] font-semibold text-slate-400 mb-1.5">I practised:</p>
+<div class="flex items-center space-x-2">
+<!-- Skill 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center text-xs mb-1">
+<i class="fa-regular fa-lightbulb"></i>
+</div>
+<span class="text-[9px] font-semibold text-slate-700">Predicting</span>
+</div>
+<!-- Skill 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-8 h-8 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center text-xs mb-1">
+<i class="fa-solid fa-magnifying-glass"></i>
+</div>
+<span class="text-[9px] font-semibold text-slate-700">Observing</span>
+</div>
+<!-- Skill 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xs mb-1">
+<i class="fa-solid fa-scale-balanced"></i>
+</div>
+<span class="text-[9px] font-semibold text-slate-700">Comparing</span>
+</div>
+</div>
+</div>
+<!-- Linked Story -->
+<div class="pt-1 border-t border-slate-100">
+<span class="text-[10px] font-medium text-slate-400 block">Story:</span>
+<div class="flex items-center space-x-2 mt-0.5">
+<span class="text-base leading-none">⛵</span>
+<span class="text-xs font-bold text-slate-800">The Little Boat</span>
+</div>
+</div>
+</div>
+<!-- Right Activity Photo Column -->
+<div class="col-span-5">
+<div class="relative rounded-2xl overflow-hidden shadow-sm aspect-square bg-slate-100 border border-slate-200">
+<img alt="Floating and sinking activity with boat" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2saLt76PtIVtD_0oHFQCauce15qM_CT_ZXzsRNmcrecGhXTSX-5HrBRx7HTec4OXtw5KPpBnxcj0s8wT2ASqNse1_mCt10kTDAKNTEw0jLnXg-NYHLSwMGiD-_Zwf5P2mUE-uEB_PBnQdiC3wzVg9TBA970xhgoFLsNZpBuCNiwJmW9HLf8Rx-vIWZmfGkk9BpiMJUY4_cAxMZSEaGYqax24LIacHz9G8DHBf0cGxT7Ef668hLBgdwA"/>
+<div class="absolute bottom-1 right-1 bg-black/60 backdrop-blur-sm text-white text-[9px] font-medium px-1.5 py-0.5 rounded">
+                Live Class
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LearningExplorationCard -->
+<!-- BEGIN: TryAtHomeBanner -->
+<section class="try-home-gradient rounded-2xl p-3.5 shadow-subtle flex items-start space-x-3" data-purpose="parent-extension-card">
+<div class="w-9 h-9 rounded-xl bg-amber-400/20 text-amber-700 flex items-center justify-center shrink-0 mt-0.5 text-base">
+<i class="fa-solid fa-house-chimney-window"></i>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-extrabold text-amber-900 tracking-wide uppercase">Try at home</span>
+<i class="fa-regular fa-lightbulb text-amber-600 text-xs"></i>
+</div>
+<p class="text-xs font-bold text-slate-800 mt-1 italic leading-snug">
+            “Which three things in your kitchen do you think will float?”
+          </p>
+</div>
+</section>
+<!-- END: TryAtHomeBanner -->
+<!-- BEGIN: MomentsGallerySection -->
+<section data-purpose="photo-stream">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center space-x-1.5">
+<i class="fa-solid fa-camera text-brand-600 text-xs"></i>
+<h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Moments from today</h4>
+</div>
+<button class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center space-x-1">
+<span>View All</span>
+<i class="fa-solid fa-chevron-right text-[10px]"></i>
+</button>
+</div>
+<!-- 4 Activity Thumbnails with Play Badges -->
+<div class="grid grid-cols-4 gap-2">
+<div class="relative aspect-square rounded-xl overflow-hidden border border-slate-200/90 shadow-sm group cursor-pointer">
+<img alt="Moment 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvX56Yg3zHGumUL9kNQlt_sCaWyLJ1kmPxCqKG-kVZpMu6YL_EGc8h_JY6KqLYN2KtrbcnqZl7e_S2iCb3hvayFLX_o8jq9ahg4jo6E4T4FRLlxt-dFba0i8_00ZiLuwdX7ZttUQ5vFoHZkji_mNRmK_B76bqeNVsLj03OfteuBOin0CPMuOsyoW5epoUGvOwNNmvDQYdlwogRz_9Rt-hL09fP8FyX-OV03CJqbq90NROknfv3WWz21A"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 flex items-center justify-center">
+<span class="w-5 h-5 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[9px] text-slate-900 shadow">
+<i class="fa-solid fa-play ml-0.5"></i>
+</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-xl overflow-hidden border border-slate-200/90 shadow-sm group cursor-pointer">
+<img alt="Moment 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADMJt5HH4cDYwb5vnVrwlWMTgk1d3iNkPuY37fFzWGuK1xPPHsLbZ-t0gWOasETPq8lLGMVhL2ofx5TfyFVnD6PD4zB_dW8yF67saUrlhnU_GjNd19D8DQcYzibsdwxM6wJaF3fn3AOUJY7dZJy8e7bwtTzK9ReRUOpOr6e8tSHQp8pkWXcyThmfsWb6eB-10WYTOk58chze8TcGr1CjojYcVryegJ4SDbxtUPS5GBDAJfcEPCNb5pjg"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 flex items-center justify-center">
+<span class="w-5 h-5 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[9px] text-slate-900 shadow">
+<i class="fa-solid fa-play ml-0.5"></i>
+</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-xl overflow-hidden border border-slate-200/90 shadow-sm group cursor-pointer">
+<img alt="Moment 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTBunttEJlvpV1y0iiWk-AnzEToSaL6uNyIEfJ4s4noDLNG0ax8rj5htN9HSOqRFjH1HHq27QeLkTKhLqP8Zm8dSh_1vLLE49vsxcR3Pmhtf1CtrZ8Y01d66wxz3ZRa8CTRfzTKE9PBPLOe1WOTtL0C49QQD23F9jXYpPQ7p1A5fOMnIUBU1-6HaJ7k71lRPTZrhlMPdH2v-Z9RKsg2qR0JKvTDinY6BYAPh7NI-pFmOLPcwTLnn7bPQ"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 flex items-center justify-center">
+<span class="w-5 h-5 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[9px] text-slate-900 shadow">
+<i class="fa-solid fa-play ml-0.5"></i>
+</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-xl overflow-hidden border border-slate-200/90 shadow-sm group cursor-pointer">
+<img alt="Moment 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEm4hGUSw1bYhqa8F89vlAb3gLzYGoK57dPlD88ohsIjDsfeWb46QApYhu-lDmdGR3ON15l2-8s9HeJ8AinEWx3vQGmTeHLaWlyEk-O4Tl4FHy8GlmSgUlmCr6qk1MvHQJPACrWArNFP5VlAb47CGTPzW2GfcxD0UBChTE2-9VmAbTAbA5YayOqadVmKpgwq4BbKpFFZTplTXDOmZhSurTc8h4f8PmFeY9vAtUve430uXcAPgebWNcig"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 flex items-center justify-center">
+<span class="w-5 h-5 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[9px] text-slate-900 shadow">
+<i class="fa-solid fa-play ml-0.5"></i>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: MomentsGallerySection -->
+<!-- BEGIN: TeacherObservationNote -->
+<section class="status-card p-3.5 shadow-soft border-l-4 border-l-brand-500" data-purpose="teacher-note-card">
+<div class="flex items-start space-x-3">
+<div class="w-9 h-9 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 shrink-0 text-base">
+<i class="fa-solid fa-comment-dots"></i>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h5 class="text-xs font-bold text-slate-800">Teacher Note</h5>
+<i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+</div>
+<p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              Ananya showed great curiosity during the water play activity and made wonderful predictions!
+            </p>
+</div>
+</div>
+</section>
+<!-- END: TeacherObservationNote -->
+<!-- BEGIN: BrandFooterMotto -->
+<div class="pt-2 pb-4 text-center" data-purpose="app-branding-footer">
+<p class="text-[11px] font-semibold text-slate-500 tracking-tight">
+          Stronger connections. Greater understanding.
+        </p>
+<p class="text-[10px] font-bold text-brand-600 mt-0.5">
+          Better learning. Together, every day.
+        </p>
+</div>
+<!-- END: BrandFooterMotto -->
+</main>
+<!-- END: ScrollableAppContent -->
+<!-- BEGIN: BottomTabBar -->
+<!-- Native iOS 4-tab docked Navigation Bar -->
+<nav class="absolute bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200/80 px-4 py-2.5 flex items-center justify-around z-30" data-purpose="bottom-tab-navigation">
+<!-- Tab 1: Home (Active) -->
+<button class="flex flex-col items-center justify-center space-y-1 text-brand-600">
+<div class="w-8 h-8 rounded-full bg-brand-50 flex items-center justify-center">
+<i class="fa-solid fa-house text-sm"></i>
+</div>
+<span class="text-[10px] font-bold tracking-tight">Home</span>
+</button>
+<!-- Tab 2: Updates -->
+<button class="flex flex-col items-center justify-center space-y-1 text-slate-400 hover:text-slate-700">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="fa-regular fa-heart text-base"></i>
+</div>
+<span class="text-[10px] font-medium tracking-tight">Updates</span>
+</button>
+<!-- Tab 3: My Child -->
+<button class="flex flex-col items-center justify-center space-y-1 text-slate-400 hover:text-slate-700">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="fa-regular fa-user text-base"></i>
+</div>
+<span class="text-[10px] font-medium tracking-tight">My Child</span>
+</button>
+<!-- Tab 4: More -->
+<button class="flex flex-col items-center justify-center space-y-1 text-slate-400 hover:text-slate-700">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="fa-solid fa-ellipsis text-base"></i>
+</div>
+<span class="text-[10px] font-medium tracking-tight">More</span>
+</button>
+</nav>
+<!-- END: BottomTabBar -->
+<!-- BEGIN: iOSHomeIndicator -->
+<div class="absolute bottom-1 inset-x-0 flex justify-center z-40 pointer-events-none">
+<div class="w-32 h-1 bg-slate-300 rounded-full"></div>
+</div>
+<!-- END: iOSHomeIndicator -->
+</div>
+<!-- END: MobileFrameContainer -->
+</body></html>

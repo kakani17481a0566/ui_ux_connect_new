@@ -1,0 +1,158 @@
+<!DOCTYPE html><html class="light" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-container": "#00b4d8", "inverse-surface": "#283044", "inverse-on-surface": "#eef0ff", "secondary-fixed": "#a3eeff", "on-primary-container": "#00414f", "on-surface-variant": "#3d494d", "on-secondary-fixed": "#001f25", "primary": "#00677d", "surface-variant": "#dae2fd", "on-secondary": "#ffffff", "on-surface": "#131b2e", "primary-fixed-dim": "#4cd6fb", "on-secondary-container": "#006b7a", "surface-container": "#eaedff", "on-tertiary-fixed-variant": "#084c67", "on-tertiary-fixed": "#001e2c", "on-background": "#131b2e", "on-tertiary": "#ffffff", "surface-bright": "#faf8ff", "on-error": "#ffffff", "secondary-container": "#8debff", "primary-fixed": "#b3ebff", "secondary-fixed-dim": "#76d4e7", "on-secondary-fixed-variant": "#004e5a", "surface-dim": "#d2d9f4", "on-primary-fixed-variant": "#004e5f", "error": "#ba1a1a", "surface-container-highest": "#dae2fd", "on-tertiary-container": "#004058", "tertiary-fixed-dim": "#98cded", "surface": "#faf8ff", "on-primary": "#ffffff", "tertiary": "#2c6480", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "outline-variant": "#bcc9ce", "inverse-primary": "#4cd6fb", "tertiary-container": "#77accb", "tertiary-fixed": "#c3e8ff", "surface-tint": "#00677d", "secondary": "#006877", "background": "#faf8ff", "surface-container-high": "#e2e7ff", "outline": "#6d797e", "on-primary-fixed": "#001f27", "on-error-container": "#93000a", "surface-container-low": "#f2f3ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"], "body": ["Plus Jakarta Sans"], "label": ["Manrope"] }, fontSize: {} } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full flex items-center justify-between px-6 pt-2 pb-1 text-on-surface font-headline"><span class="text-[13px] font-bold tracking-tight">9:41</span><div class="flex items-center gap-1.5 text-on-surface"><span class="material-symbols-outlined text-[15px]">signal_cellular_alt</span><span class="material-symbols-outlined text-[15px]">wifi</span><span class="material-symbols-outlined text-[17px]">battery_full</span></div></div><div class="h-14 px-4 flex items-center justify-between"><div class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-xl bg-primary/20 flex items-center justify-center p-1.5 shadow-sm"><img alt="NeuroPi" class="h-full w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X1e5yc13EgbOktqe__ZquZiLaOEXlKcHXCR42acS_AW7s2cRFx8Q9o3xa28xs2VObqbDPzLrb_EZ4P3VlbgXqGzfFEiA0rb8tae7XPe7MNKtYMxfoThjJ_GP4-bSJWgmkic8xEAOKqBPiVx6V-eCPYMW8ph2wKjnQKBLutQpcUEXolFAW4izHYV3t8LJAFarAz37u3C-kHxg5VC2r8EGCF1m4YpODU8_e2JQc5o5_FXOrTvcZupl_FGMRmWVB0iRXE4Z28GuxR"></div><div class="flex flex-col"><span class="text-[11px] font-label font-bold uppercase tracking-wider text-primary leading-none">NeuroPi</span><span class="text-base font-headline font-bold text-on-surface leading-tight">Connect</span></div></div><div class="flex items-center gap-2"><button aria-label="Notifications" class="relative w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="relative flex items-center gap-1 pl-1 pr-2 py-1 rounded-full bg-surface-container-high/60 cursor-pointer active:scale-95 transition-transform"><a href="{{DATA:SCREEN:SCREEN_14}}" class="flex-1 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-headline font-bold text-xs shadow-sm text-center">Today</a><a href="{{DATA:SCREEN:SCREEN_10}}" class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-headline font-semibold text-xs hover:text-primary transition-colors text-center">Learning</a><button class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-headline font-semibold text-xs hover:text-primary transition-colors text-center" type="button">Gallery</button><a href="{{DATA:SCREEN:SCREEN_8}}" class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-headline font-semibold text-xs hover:text-primary transition-colors text-center">Messages</a></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-24 bg-surface"><div class="flex flex-col w-full px-4 space-y-4">
+<!-- Greeting Header Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm space-y-3"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed-variant text-[11px] font-label font-bold"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>Live • Room 102 (Sunflowers)</div><div class="flex items-center gap-1 text-[11px] font-label text-outline font-semibold"><span class="material-symbols-outlined text-[14px] text-primary">schedule</span><span class="">Today, May 26</span></div></div><div class="flex items-center gap-3.5"><div class="relative flex-shrink-0"><div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-primary/20 shadow-sm"><img alt="Ananya Sharma" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsnRaj4r1PX2aNelg-qAgLYA0zqW2SDJuHOx66xCNvsBUUVqUDSmJOGKs05BtyZREVlqoJ4UerkKxq5t7_I81bZlMWnV_hFurqLRrn1PLTdv18iTf1l00kL4v3F2Ipd6HrnH9qRLz3PuwcLFqsI_eBA9qmRXiNjBUEkehyBlMS05DkXPMqjFhQQuXFH6SdbPAcJBG-BY8Lw9MXYS2bGn-1s7VpnnD0lIbutoNxrszvqJepUIGVJKC4"></div><div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary text-on-primary flex items-center justify-center text-[10px] shadow"><span class="material-symbols-outlined text-[10px]">star</span></div></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between"><h2 class="font-headline font-bold text-lg text-on-surface truncate">Ananya Sharma</h2><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-[10px] font-bold">Pre-K</span></div><div class="flex items-center gap-1.5 mt-1"><span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span><span class="text-[11px] font-label text-on-surface-variant font-medium">Present • Checked in at <strong class="text-primary font-bold">9:05 AM</strong></span></div></div></div></div>
+<!-- Child Profile Card -->
+<div class="flex items-center gap-1.5 p-1 bg-surface-container-high/60 rounded-xl"><a href="{{DATA:SCREEN:SCREEN_14}}" class="flex-1 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-headline font-bold text-xs shadow-sm text-center">Today</a><a href="{{DATA:SCREEN:SCREEN_10}}" class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-headline font-semibold text-xs hover:text-primary transition-colors text-center">Learning</a><button class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-headline font-semibold text-xs hover:text-primary transition-colors text-center" type="button">Gallery</button><a href="{{DATA:SCREEN:SCREEN_8}}" class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-headline font-semibold text-xs hover:text-primary transition-colors text-center">Messages</a></div>
+<!-- Attendance Status Banner -->
+<!-- Daily Vitals & Wellness Quick Grid -->
+<div class="space-y-2"><div class="flex items-center justify-between px-0.5"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary">vital_signs</span><span class="text-[11px] font-label font-bold uppercase tracking-wider text-outline">Daily Routine &amp; Vitals</span></div><span class="text-[11px] font-label text-primary font-semibold">Updated 15m ago</span></div><div class="grid grid-cols-2 gap-2.5"><div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-center justify-between"><div class="space-y-1"><span class="text-[10px] font-label font-bold text-outline block uppercase tracking-wider">Meals</span><p class="font-headline font-bold text-sm text-on-surface leading-none">Ate well</p><div class="flex items-center gap-1 text-[11px] font-label text-secondary font-semibold"><span class="">100% finished</span></div></div><div class="w-10 h-10 rounded-full bg-secondary-fixed/40 flex items-center justify-center text-lg shadow-sm flex-shrink-0">🥗</div></div><div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-center justify-between"><div class="space-y-1"><span class="text-[10px] font-label font-bold text-outline block uppercase tracking-wider">Water Intake</span><p class="font-headline font-bold text-sm text-on-surface leading-none">3 Glasses</p><div class="flex items-center gap-1 text-[11px] font-label text-primary font-semibold"><span class="">Hydrated</span></div></div><div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-lg shadow-sm flex-shrink-0">💧</div></div><div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-center justify-between"><div class="space-y-1"><span class="text-[10px] font-label font-bold text-outline block uppercase tracking-wider">Rest / Nap</span><p class="font-headline font-bold text-sm text-on-surface leading-none">45 mins</p><div class="flex items-center gap-1 text-[11px] font-label text-tertiary font-semibold"><span class="">Peaceful</span></div></div><div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-lg shadow-sm flex-shrink-0">🌙</div></div><div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-center justify-between"><div class="space-y-1"><span class="text-[10px] font-label font-bold text-outline block uppercase tracking-wider">Toileting</span><p class="font-headline font-bold text-sm text-on-surface leading-none">Regular</p><div class="flex items-center gap-1 text-[11px] font-label text-primary font-semibold"><span class="">Independent</span></div></div><div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-lg shadow-sm flex-shrink-0">🧼</div></div></div><div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-center justify-between"><div class="space-y-0.5"><div class="flex items-center gap-1.5"><span class="text-[10px] font-label font-bold text-outline uppercase tracking-wider">Mood &amp; Energy</span><span class="px-1.5 py-0.2 rounded bg-secondary-fixed/40 text-[9px] font-label font-bold text-on-secondary-fixed-variant">Thriving</span></div><p class="font-headline font-bold text-sm text-on-surface">Happy &amp; Curious ✨</p><p class="text-[11px] font-label text-on-surface-variant">Socialized eagerly during small group discovery</p></div><div class="w-11 h-11 rounded-full bg-secondary-fixed flex items-center justify-center text-2xl shadow-sm flex-shrink-0">🥰</div></div></div>
+<!-- Today's Learning & Exploration Split Hero Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-[11px] font-label font-bold uppercase tracking-wider text-primary">Today's Scientific Exploration</span>
+</div>
+<span class="text-[10px] font-label font-bold px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface">Cognitive Unit</span>
+</div>
+<div>
+<h3 class="font-headline font-extrabold text-xl text-primary leading-tight">Floating &amp; Sinking</h3>
+<p class="text-xs font-body text-on-surface-variant mt-0.5">Understanding buoyancy, density, and liquid displacement through play.</p>
+</div>
+<!-- Split details: Left competencies, Right real-activity photo -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<!-- Left side: Practiced skills -->
+<div class="space-y-2 flex flex-col justify-between">
+<div>
+<span class="text-[10px] font-label font-bold uppercase text-outline block mb-1.5">Cognitive Skills</span>
+<div class="space-y-1.5">
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[15px] text-primary">lightbulb</span>
+<span class="text-[11px] font-label font-bold text-on-surface">Predicting</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[15px] text-secondary">travel_explore</span>
+<span class="text-[11px] font-label font-bold text-on-surface">Observing</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[15px] text-tertiary">balance</span>
+<span class="text-[11px] font-label font-bold text-on-surface">Comparing</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high/60 p-2 rounded-lg mt-1"><a href="{{DATA:SCREEN:SCREEN_14}}" class="flex-1 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-headline font-bold text-xs shadow-sm text-center">Today</a><a href="{{DATA:SCREEN:SCREEN_10}}" class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-headline font-semibold text-xs hover:text-primary transition-colors text-center">Learning</a><button class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-headline font-semibold text-xs hover:text-primary transition-colors text-center" type="button">Gallery</button><a href="{{DATA:SCREEN:SCREEN_8}}" class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-headline font-semibold text-xs hover:text-primary transition-colors text-center">Messages</a></div>
+</div>
+<!-- Right side: Child interactive photo -->
+<div class="relative rounded-xl overflow-hidden shadow-inner h-44">
+<img class="w-full h-full object-cover" data-alt="Joyful preschool child Ananya testing floating paper boats and corks in a clear sensory water basin inside a bright classroom, hands touching the water with excitement, high depth of field soft tech lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn5LBRwpkyjlc0kPepR6cNkPRiYTgjLsdnnzqc1rElG8lqJG2BgQz9lMQMwiQlmXvM-4PTFtdUm-_dfZ1PDgfCeli7toLNTkWfEOy1QyhWhAnYYI6XDGwN19rC9sMVObAOzrnGBfakHn__3iHnSEIhnAo_4sBDkDkRo9O_1OXY0HiHwbdrsCpBzBrArozvVDSY72BFSEpVB1GotQYZ9d93CfY7BJww1EpTCHGaqUQ0YhUoXtD26WXz">
+<div class="absolute bottom-2 left-2 right-2 bg-inverse-surface/85 backdrop-blur-md px-2 py-1 rounded-lg">
+<p class="text-[10px] font-label font-bold text-inverse-on-surface flex items-center justify-between">
+<span class="">Water Laboratory</span>
+<span class="material-symbols-outlined text-[12px] text-secondary-fixed">science</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Home Extension: Try at Home Box -->
+<div class="bg-secondary-fixed/40 rounded-xl p-4 shadow-sm space-y-3"><div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0 shadow-sm"><span class="material-symbols-outlined text-[22px]">cottage</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-headline font-bold text-xs text-on-secondary-fixed-variant uppercase tracking-wider">Try at Home • Family Activity</span><span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span></div><p class="font-headline font-bold text-sm text-on-surface mt-1 leading-snug">"Which three things in your kitchen do you think will float?"</p><p class="text-[11px] font-body text-on-surface-variant mt-1 leading-relaxed">Try an orange, a metal spoon, and a plastic lid in a bowl of water before bath time!</p></div></div><div class="flex items-center gap-2 pt-1"><button class="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-primary text-on-primary font-headline font-bold text-xs shadow-sm hover:opacity-90 active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[15px]">check</span><span class="">Mark as Completed ✨</span></button><button class="flex items-center justify-center gap-1 py-2 px-3 rounded-lg bg-surface-container-lowest text-primary font-headline font-bold text-xs shadow-sm hover:bg-surface-container-high transition-colors active:scale-95" type="button"><span class="material-symbols-outlined text-[15px]">add_a_photo</span><span class="">Share</span></button></div></div>
+<!-- Moments from Today Gallery Strip -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">photo_library</span>
+<h3 class="font-headline font-bold text-sm text-on-surface">Moments from Today</h3>
+</div>
+<button class="flex items-center text-xs font-label font-bold text-primary hover:text-secondary transition-colors" id="btn-view-all-photos">
+<span class="">4 Photos</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- 4 Thumbnail Strip -->
+<div class="grid grid-cols-4 gap-2">
+<div class="relative aspect-square rounded-lg overflow-hidden shadow-sm group cursor-pointer" onclick="openPhotoViewer(0)">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Ananya Sharma sitting with two kindergarten friends building a colorful geometric wooden block tower in a sunny learning corner, laughing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3-vR0dEIx8wp3ovDqi7bPiuUTPpGKzgy12AH8akYuUtFN_2c1AF056YSflR6lOA8ICBQx_qKRbJWAQtvEG0P70te2kjYPeMXSPX-yowv7BmyI1InXZw5U4FNZJIpLOss9W_D9Uywksvbgt8tpBGDeGA2dfW1HL-CGglq-9kut458TzjKSYgUZLtLqA0NSUVjhiXb1dT30qmCXxQyPwrvFjVnfTe6wQFgkUBUelsyqGiXvV6_o-vkV">
+<div class="absolute bottom-1 right-1 bg-on-surface/60 rounded px-1 text-[8px] text-on-primary font-label">09:40</div>
+</div>
+<div class="relative aspect-square rounded-lg overflow-hidden shadow-sm group cursor-pointer" onclick="openPhotoViewer(1)">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Preschool girl Ananya holding a paintbrush with turquoise tempera paint creating ripples on oversized craft paper, bright focused smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK0JmHtGBhwQcAUGm3QtCoEvLY2bdX08WhaVnsBhDiwSanotaYfNbH8wM26paMUSeuRi7pIrRQLnEAw_04CR6WiAhCfjyOstoBrf3aqo9RG_cLq-Fjjeowxbbo0tJNp3IxTDpJB9-imBo4kXCHP050CNTA0782Bvu01QMSePCMVcuadXMkcKTAyzrUmzm49voUoOQmbLBJFwf9uqd78NROO3_pbq0MTxU-B2S83A0AI7juW6vn8Trg">
+<div class="absolute bottom-1 right-1 bg-on-surface/60 rounded px-1 text-[8px] text-on-primary font-label">10:30</div>
+</div>
+<div class="relative aspect-square rounded-lg overflow-hidden shadow-sm group cursor-pointer" onclick="openPhotoViewer(2)">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Little girl in kindergarten sharing sliced apples and smiling politely with her teacher at a low round wooden table, cozy atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvtyrL9k03_RQui6p3bwj7DnoIlb7jXaGYlPJZS_nNMzJFDraP0Q4L7QCZa1NnXZgM9bl04M6LI4DbOSVHPxJO2YERYlDQVSwY4pXOj0Gl1p_HNnAXy5tuIGStMY1w45Mqk70GisClwLwFjMZ7e1a7KDAReYErd8bYBbT-PNB3qbTB6mJLV7kVN2gciwRlPqaoHwbHkayWNZ53kkgEYkoETEWl-gHaCZ8umId4yxqgG2xozaZynLj5">
+<div class="absolute bottom-1 right-1 bg-on-surface/60 rounded px-1 text-[8px] text-on-primary font-label">11:50</div>
+</div>
+<div class="relative aspect-square rounded-lg overflow-hidden shadow-sm group cursor-pointer" onclick="openPhotoViewer(3)">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Playground outdoor moment with Ananya Sharma swinging gleefully on a safe rubber swing with green turf and sunny trees behind." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD16wRAcCMLmfT1ffGyX3Px3bos35qflBBkUqQRfkaeWFNL31knYezqCcKFa1T6T411__kWnRDfBJBk-RHGGCIr_2SnCWKpwxVutV0EqQGavRmaXSFfvqiQ0bURv5PKcGMX8ApZ8qhME8NPBmO0jilSzAM7gLVliNQnZiBWnwmql-ONiwiIterNgxa0E_CRSGcWph-U7_v_xOrLlNF_pjr9TaPem0qQpXJnlsE-Ju-RHyTvhMfYBqqC">
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[20px]">zoom_in</span>
+</div>
+<div class="absolute bottom-1 right-1 bg-on-surface/60 rounded px-1 text-[8px] text-on-primary font-label">14:15</div>
+</div>
+</div>
+</div>
+<!-- Teacher Note Card -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm space-y-3" id="teacher-note-card"><div class="flex items-center justify-between"><div class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline font-bold text-xs shadow-sm">ML</div><div><div class="flex items-center gap-1.5"><h4 class="font-headline font-bold text-xs text-on-surface">Ms. Laura Martinez</h4><span class="px-1.5 py-0.2 rounded bg-surface-container-high text-[9px] font-label font-bold text-primary">Lead Educator</span></div><p class="text-[10px] font-label text-outline">Classroom Sunflowers • 12:45 PM</p></div></div><button class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-outline hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">more_vert</span></button></div><div class="bg-surface-container-low p-3 rounded-xl space-y-2.5"><p class="font-body text-xs text-on-surface leading-relaxed">“Ananya showed great curiosity during our water play activity today! She immediately predicted the cork would float because it felt ‘fluffy and light.’ Wonderful intuition!”</p><div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest shadow-sm"><button class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center active:scale-95 shadow-sm flex-shrink-0" type="button"><span class="material-symbols-outlined text-[15px]">play_arrow</span></button><div class="flex-1 flex items-center gap-1"><span class="w-1 h-3 bg-primary rounded-full"></span><span class="w-1 h-4 bg-primary rounded-full"></span><span class="w-1 h-2 bg-outline-variant rounded-full"></span><span class="w-1 h-5 bg-outline-variant rounded-full"></span><span class="w-1 h-3 bg-outline-variant rounded-full"></span><span class="w-1 h-4 bg-outline-variant rounded-full"></span><span class="w-1 h-2 bg-outline-variant rounded-full"></span></div><span class="text-[10px] font-label font-semibold text-outline">0:24</span></div></div><div class="flex items-center justify-between pt-0.5"><span class="text-[10px] font-label font-semibold text-outline">Family Reactions:</span><div class="flex items-center gap-1.5" id="parent-reaction-btns"><button class="reaction-btn px-2.5 py-1 rounded-full bg-surface-container-high text-xs hover:scale-105 active:scale-95 transition-transform" data-emoji="❤️" type="button">❤️ <span class="text-[10px] font-bold font-label text-on-surface">Loved</span></button><button class="reaction-btn px-2.5 py-1 rounded-full bg-surface-container-high text-xs hover:scale-105 active:scale-95 transition-transform" data-emoji="👏" type="button">👏 <span class="text-[10px] font-bold font-label text-on-surface">Proud</span></button><a href="{{DATA:SCREEN:SCREEN_8}}" class="reaction-btn px-2.5 py-1 rounded-full bg-surface-container-high text-xs hover:scale-105 active:scale-95 transition-transform flex items-center gap-0.5">💬 <span class="text-[10px] font-bold font-label text-on-surface">Reply</span></a></div></div></div>
+<!-- Motivational Footer Pill Banner -->
+<div class="bg-gradient-to-r from-primary via-tertiary to-secondary rounded-xl p-3.5 text-on-primary shadow-sm flex items-center justify-between">
+<div class="space-y-0.5">
+<p class="font-headline font-bold text-xs leading-snug">Stronger connections. Greater understanding.</p>
+<p class="text-[10px] font-body opacity-90">Better learning. Together, every single day.</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+</div>
+<!-- Partnership Footnote -->
+<div class="text-center py-2 space-y-1">
+<p class="text-[10px] font-label font-bold text-outline uppercase tracking-widest">
+      NeuroPi Connect • My School ITALY
+    </p>
+<p class="text-[10px] font-body text-on-surface-variant">
+      One Child. One Connect. Many Moments. Endless Growth.
+    </p>
+</div>
+</div>
+<script>
+  // Simple interactive micro-interactions for parent reaction buttons
+  document.querySelectorAll('.reaction-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const currentBg = this.classList.contains('bg-primary-container');
+      document.querySelectorAll('.reaction-btn').forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+        btn.classList.add('bg-surface-container-high');
+      });
+      if (!currentBg) {
+        this.classList.remove('bg-surface-container-high');
+        this.classList.add('bg-primary-container', 'text-on-primary-container');
+      }
+    });
+  });
+
+  function openPhotoViewer(index) {
+    const messages = [
+      "Photo 1: Ananya building with geometric blocks with friends!",
+      "Photo 2: Sensory water and acrylic exploration in morning studio.",
+      "Photo 3: Healthy organic snack time with teacher guidance.",
+      "Photo 4: High energy playground playtime on the sunny lawn."
+    ];
+    // Simple tactile feedback toast
+    const toast = document.createElement('div');
+    toast.className = 'fixed bottom-20 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs font-label px-3.5 py-2 rounded-full shadow-lg z-50 transition-opacity duration-300';
+    toast.innerText = messages[index] || "Viewing activity photo";
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      setTimeout(() => toast.remove(), 300);
+    }, 2000);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]"><div class="flex justify-around items-center h-16 px-2"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-primary font-bold transition-transform active:scale-95" data-path="home" href="{{DATA:SCREEN:SCREEN_14}}"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">cottage</span><span class="text-[10px] font-label font-bold">Home</span><span class="w-1 h-1 rounded-full bg-primary mt-0.5"></span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant transition-colors hover:text-primary active:scale-95" data-path="updates" href="{{DATA:SCREEN:SCREEN_10}}"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="text-[10px] font-label font-medium">Timeline</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant transition-colors hover:text-primary active:scale-95" data-path="my-child" href="{{DATA:SCREEN:SCREEN_12}}"><span class="material-symbols-outlined text-[22px]">face</span><span class="text-[10px] font-label font-medium">Ananya</span></a><a class="relative flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant transition-colors hover:text-primary active:scale-95" data-path="messages" href="{{DATA:SCREEN:SCREEN_8}}"><span class="material-symbols-outlined text-[22px]">forum</span><span class="absolute top-1 right-5 w-4 h-4 rounded-full bg-primary text-on-primary text-[9px] font-label font-bold flex items-center justify-center">2</span><span class="text-[10px] font-label font-medium">Chat</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant transition-colors hover:text-primary active:scale-95" data-path="more" href="#"><span class="material-symbols-outlined text-[22px]">more_horiz</span><span class="text-[10px] font-label font-medium">More</span></a></div></nav>
+
+</body></html>

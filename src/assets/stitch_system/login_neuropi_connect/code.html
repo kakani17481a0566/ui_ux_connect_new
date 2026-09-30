@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>NeuroPi Connect - Parent Login</title>
+<!-- Plus Jakarta Sans Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#00bcd4', // NeuroPi cyan
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            },
+            royal: {
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#0f172a',
+            },
+            surface: {
+              light: '#f8f9ff',
+              card: '#ffffff',
+              subtle: '#f1f5f9',
+              border: '#e2e8f0',
+            }
+          },
+          boxShadow: {
+            'soft': '0 8px 30px -4px rgba(0, 188, 212, 0.12), 0 4px 16px -2px rgba(15, 23, 42, 0.05)',
+            'btn': '0 10px 25px -3px rgba(0, 188, 212, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-enhancements">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      background-color: #e2e8f0;
+    }
+    
+    /* Device frame styling */
+    .mobile-screen-container {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background-color: #f8f9ff;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    }
+
+    /* Soft backdrop bubbles */
+    .bg-gradient-mesh {
+      background: radial-gradient(circle at 10% 15%, rgba(0, 188, 212, 0.12) 0%, transparent 45%),
+                  radial-gradient(circle at 90% 8%, rgba(2, 132, 199, 0.1) 0%, transparent 40%),
+                  radial-gradient(circle at 50% 95%, rgba(244, 114, 182, 0.08) 0%, transparent 50%),
+                  #f8f9ff;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen text-slate-800 antialiased p-0 sm:p-4">
+<!-- BEGIN: MobileDeviceWrapper -->
+<div class="mobile-screen-container bg-gradient-mesh flex flex-col justify-between overflow-x-hidden" data-purpose="mobile-viewport">
+<!-- BEGIN: iOSStatusBar -->
+<header class="w-full pt-3 px-6 pb-2 flex justify-between items-center text-slate-900 text-xs font-semibold select-none z-20">
+<!-- Device Time -->
+<span class="tracking-tight text-sm font-bold text-slate-800">9:41</span>
+<!-- Device System Icons -->
+<div class="flex items-center space-x-2 text-slate-700">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="signal" aria-hidden="true" class="lucide lucide-signal w-3.5 h-3.5 stroke-[2.5]"><path d="M2 20h.01"></path><path d="M7 20v-4"></path><path d="M12 20v-8"></path><path d="M17 20V8"></path><path d="M22 4v16"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="wifi" aria-hidden="true" class="lucide lucide-wifi w-3.5 h-3.5 stroke-[2.5]"><path d="M12 20h.01"></path><path d="M2 8.82a15 15 0 0 1 20 0"></path><path d="M5 12.859a10 10 0 0 1 14 0"></path><path d="M8.5 16.429a5 5 0 0 1 7 0"></path></svg>
+<div class="w-5 h-2.5 border border-slate-700 rounded-sm p-0.5 flex items-center">
+<div class="h-full w-3.5 bg-slate-800 rounded-2xs"></div>
+</div>
+</div>
+</header>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 px-5 pt-1 pb-4 flex flex-col justify-start">
+<!-- BEGIN: TopBrandingSection -->
+<div class="flex flex-col items-center text-center mt-3 mb-6">
+  <div class="flex justify-center mb-3">
+    <img alt="NeuroPi Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBktcxvrjkGC2UcgLzmGQEFUdXybxkoS66djIf3_KxL5ycjwfVtbyAinOent1mQ1_hkprPwurqMXJLARfm05OeGl-hXAAzxXCYQ-vsKvtA5KDPwrDYUisU2On3cKfAfKlz3jLdlO98BG-h3TYZwwMDnvHl46_YJ4hEJM7spgxMm3gmwSQGdGZWqDAS_gp2W57l2qr0ApBUsvCuxEb-L_Xm1B7OnopPvL5xNiAvHOzFMhZjtknECf7DkLHHLQuFMqNS1h4">
+  </div>
+  <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-snug px-2">
+    NeuroPi Family &amp; Parent Portal
+  </h1>
+  <div class="inline-flex items-center gap-1.5 px-3 py-1 mt-2.5 rounded-full bg-cyan-50 border border-cyan-200/80 text-[11px] font-bold text-sky-700 tracking-wide uppercase">
+    <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+    <span class="">STAY CONNECTED WITH YOUR CHILD'S LEARNING</span>
+  </div>
+</div>
+<!-- END: TopBrandingSection -->
+<!-- BEGIN: LoginFormSection -->
+<section class="bg-white rounded-3xl p-6 shadow-soft border border-slate-100/80" data-purpose="login-form-card">
+  <form class="space-y-4" onsubmit="event.preventDefault();">
+    <div class="space-y-1.5">
+      <label class="block text-xs font-semibold text-slate-700" for="user-identity">
+        Username or Email
+      </label>
+      <div class="relative flex items-center">
+        <div class="absolute left-3.5 text-slate-500 pointer-events-none flex items-center">
+          <i class="w-4 h-4 text-slate-500" data-lucide="user"></i>
+        </div>
+        <input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200/80 focus:bg-white focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 text-xs font-semibold text-slate-800 placeholder-slate-400 transition-all outline-none" id="user-identity" name="identity" placeholder="Username or Email" required="" type="text" value="cha77026">
+      </div>
+    </div>
+    <div class="space-y-1.5">
+      <div class="flex justify-between items-center">
+        <label class="block text-xs font-semibold text-slate-700" for="user-password">
+          Password
+        </label>
+        <a class="text-xs font-semibold text-slate-600 hover:text-brand-600 transition" href="#">
+          Forgot password?
+        </a>
+      </div>
+      <div class="relative flex items-center">
+        <div class="absolute left-3.5 text-slate-500 pointer-events-none flex items-center">
+          <i class="w-4 h-4 text-slate-500" data-lucide="lock"></i>
+        </div>
+        <input class="w-full pl-10 pr-10 py-2.5 rounded-xl bg-slate-50 border border-slate-200/80 focus:bg-white focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 text-xs font-semibold text-slate-800 placeholder-slate-400 transition-all outline-none" id="user-password" name="password" placeholder="Password" required="" type="password" value="••••••••••">
+        <button aria-label="Toggle password visibility" class="absolute right-3.5 text-slate-500 hover:text-slate-700 p-0.5 focus:outline-none" id="toggle-password-btn" type="button">
+          <i class="w-4 h-4" data-lucide="eye" id="eye-icon"></i>
+        </button>
+      </div>
+    </div>
+    <div class="pt-2">
+      <button class="w-full py-3 px-6 rounded-xl bg-sky-500 hover:bg-sky-600 active:scale-[0.99] text-white font-bold text-sm tracking-wide shadow-btn flex items-center justify-center gap-2 transition-all cursor-pointer" type="submit">
+        <i class="w-4 h-4" data-lucide="log-in"></i>
+        <span class="">Login to Portal</span>
+      </button>
+    </div>
+  </form>
+</section>
+<!-- END: LoginFormSection -->
+<!-- BEGIN: ValueHighlightsMini -->
+
+<!-- END: ValueHighlightsMini -->
+</main>
+<!-- END: MainContentArea -->
+<!-- BEGIN: TrustAndSecurityFooter -->
+<footer class="px-5 pt-2 pb-6 text-center select-none" data-purpose="trust-footer"><div class="w-32 h-1 bg-slate-300 rounded-full mx-auto mt-6 mb-2"></div></footer>
+<!-- END: TrustAndSecurityFooter -->
+</div>
+<!-- END: MobileDeviceWrapper -->
+<!-- JavaScript: Icon Loader & Simple Password Toggle -->
+<script data-purpose="lucide-icons-init">
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+<script data-purpose="ui-interactions">
+    // Interactive password visibility toggle
+    const toggleBtn = document.getElementById('toggle-password-btn');
+    const passwordInput = document.getElementById('user-password');
+    const eyeIcon = document.getElementById('eye-icon');
+
+    if (toggleBtn && passwordInput) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        
+        // Re-render icon
+        if (isPassword) {
+          eyeIcon.setAttribute('data-lucide', 'eye-off');
+        } else {
+          eyeIcon.setAttribute('data-lucide', 'eye');
+        }
+        lucide.createIcons();
+      });
+    }
+  </script>
+
+
+</body></html>
