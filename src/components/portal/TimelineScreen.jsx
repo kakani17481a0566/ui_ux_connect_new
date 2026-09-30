@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { PortalHeader } from '../layout/PortalHeader';
+import { StudentCard } from '../ui/StudentCard';
 import logoImg from '../../assets/neuropi-logo.png';
-import { Badge } from '../ui/Badge';
 
-export const TimelineScreen = ({ onNavigate }) => {
+export const TimelineScreen = ({ user, onLogout, onNavigate }) => {
   const [activeStage, setActiveStage] = useState(0);
 
   const stages = [
@@ -60,26 +61,19 @@ export const TimelineScreen = ({ onNavigate }) => {
 
   return (
     <div className="bg-slate-100 font-sans text-slate-800 antialiased flex flex-col min-h-screen pb-24 relative select-none">
-      {/* Header */}
-      <header className="bg-[#0b5cbe] text-white pt-3 pb-3 px-4 shadow-md sticky top-0 z-30 flex items-center justify-between">
-        <button
-          onClick={() => onNavigate('home')}
-          className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/20 transition active:scale-95"
-          type="button"
-        >
-          <span className="material-symbols-outlined text-[20px]">arrow_back</span>
-        </button>
-        <h1 className="text-base font-semibold tracking-wide font-sans">Developmental Timeline</h1>
-        <button
-          onClick={() => alert("Developmental Timeline measures 5 progressive milestones across speech, cognitive & social domains.")}
-          className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/20 transition active:scale-95"
-          type="button"
-        >
-          <span className="material-symbols-outlined text-[20px]">info</span>
-        </button>
-      </header>
+      {/* Shared Portal Header */}
+      <PortalHeader
+        user={user}
+        onLogout={onLogout}
+        title="Developmental Timeline"
+        showBack
+        onBack={() => onNavigate('home')}
+      />
 
       <main className="flex-1 overflow-y-auto max-w-md sm:max-w-xl mx-auto w-full px-4 pt-4 space-y-4">
+        {/* Reusable Student Card */}
+        <StudentCard />
+
         {/* Brand Header */}
         <section className="flex items-center justify-between bg-white px-3 py-2 rounded-xl shadow-xs border border-slate-200/80">
           <div className="flex items-center gap-2">
@@ -92,24 +86,6 @@ export const TimelineScreen = ({ onNavigate }) => {
               <div className="text-[10px] font-bold text-slate-700 leading-none">My School</div>
               <div className="text-[9px] font-extrabold text-blue-600 tracking-wider">ITALY</div>
             </div>
-          </div>
-        </section>
-
-        {/* Child Profile Card */}
-        <section className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-xs flex items-center gap-4">
-          <div className="relative">
-            <div className="w-12 h-12 rounded-full bg-[#00677d] text-white font-bold flex items-center justify-center text-lg shadow-xs">
-              AS
-            </div>
-            <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></span>
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between">
-              <h2 className="text-base font-bold text-slate-900 leading-tight">Ananya Sharma</h2>
-              <Badge variant="active" className="text-[10px] py-0.5">Active</Badge>
-            </div>
-            <p className="text-xs text-slate-500 font-medium mt-0.5">Pre-Kindergarten</p>
-            <p className="text-[11px] font-semibold text-blue-600">Age: 4y 5m</p>
           </div>
         </section>
 

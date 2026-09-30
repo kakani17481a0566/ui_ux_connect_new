@@ -1,26 +1,17 @@
 import React from 'react';
+import { PortalHeader } from '../layout/PortalHeader';
 
-export const StoryTimeScreen = ({ onNavigate }) => {
+export const StoryTimeScreen = ({ user, onLogout, onNavigate }) => {
   return (
     <div className="bg-slate-100 font-sans text-slate-800 antialiased flex flex-col min-h-screen pb-24 relative select-none">
-      {/* Header */}
-      <header className="bg-[#0284c7] px-4 py-3 text-white flex items-center justify-between sticky top-0 z-30 shadow-xs">
-        <button
-          onClick={() => onNavigate('home')}
-          className="p-1 rounded-full hover:bg-white/10 transition active:scale-95"
-          type="button"
-        >
-          <span className="material-symbols-outlined text-[20px]">arrow_back</span>
-        </button>
-        <h1 className="text-lg font-bold tracking-wide">Story Time</h1>
-        <button
-          onClick={() => alert("Daily Story Time: The Little Boat")}
-          className="p-1 rounded-full hover:bg-white/10 transition active:scale-95 relative"
-        >
-          <span className="material-symbols-outlined text-[20px]">notifications</span>
-          <span className="absolute top-1 right-1 w-2 h-2 bg-amber-300 rounded-full"></span>
-        </button>
-      </header>
+      {/* Shared Portal Header */}
+      <PortalHeader
+        user={user}
+        onLogout={onLogout}
+        title="Story Time"
+        showBack
+        onBack={() => onNavigate('home')}
+      />
 
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto max-w-md sm:max-w-xl mx-auto w-full px-4 pt-4 space-y-4">

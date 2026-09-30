@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import logoImg from '../../assets/neuropi-logo.png';
+import { PortalHeader } from '../layout/PortalHeader';
+import { StudentCard } from '../ui/StudentCard';
 
 export const ParentDashboard = ({ user, onLogout }) => {
   const [activeTab, setActiveTab] = useState('Today');
   const [reaction, setReaction] = useState(null);
   const [homeCompleted, setHomeCompleted] = useState(false);
   const [toastMessage, setToastMessage] = useState(null);
-
-  const fullName = [user?.firstName, user?.middleName, user?.lastName].filter(Boolean).join(' ') || user?.username || 'Chandan Kumar Reddy Obili';
-  const initial = (user?.firstName || 'C').charAt(0).toUpperCase();
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -17,89 +15,13 @@ export const ParentDashboard = ({ user, onLogout }) => {
 
   return (
     <div className="bg-[#faf8ff] font-sans text-[#131b2e] antialiased flex flex-col min-h-screen pb-24 relative select-none">
-      {/* Clean Web Header */}
-      <header className="sticky top-0 w-full z-50 bg-[#faf8ff]/90 backdrop-blur-xl border-b border-slate-200/60 shadow-xs">
-        <div className="h-14 max-w-md mx-auto px-4 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#00677d]/20 flex items-center justify-center p-1 shadow-xs">
-              <img src={logoImg} alt="NeuroPi" className="h-full w-auto object-contain" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[11px] font-manrope font-bold uppercase tracking-wider text-[#00677d] leading-none">NeuroPi</span>
-              <span className="text-base font-bold text-[#131b2e] leading-tight">Connect</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              aria-label="Notifications"
-              onClick={() => showToast("Notifications: 2 unread school updates")}
-              className="relative w-10 h-10 flex items-center justify-center rounded-full bg-[#e2e7ff]/60 text-[#3d494d] hover:text-[#00677d] transition-colors"
-            >
-              <span className="material-symbols-outlined text-[20px]">notifications</span>
-              <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#ba1a1a] ring-2 ring-[#faf8ff]"></span>
-            </button>
-
-            {/* Profile Bubble & Signout */}
-            <div className="relative flex items-center gap-1.5 pl-1.5 pr-2 py-1 rounded-full bg-[#e2e7ff]/60">
-              <div className="w-7 h-7 rounded-full bg-[#00677d] text-white flex items-center justify-center font-bold text-xs shadow-xs">
-                {initial}
-              </div>
-              <button
-                type="button"
-                onClick={onLogout}
-                title="Logout"
-                className="text-[#6d797e] hover:text-[#ba1a1a] transition-colors p-0.5"
-              >
-                <span className="material-symbols-outlined text-[16px]">logout</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Unified Header */}
+      <PortalHeader user={user} onLogout={onLogout} />
 
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col relative w-full max-w-md mx-auto pt-4 pb-4 px-4 space-y-4">
-        {/* Live Room Status Card */}
-        <div className="bg-white rounded-xl p-3.5 shadow-xs space-y-3 border border-slate-100">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#a3eeff]/40 text-[#004e5a] text-[11px] font-manrope font-bold">
-              <span className="w-2 h-2 rounded-full bg-[#00b4d8] animate-pulse"></span>
-              <span>Live • Room 102 (Sunflowers)</span>
-            </div>
-            <div className="flex items-center gap-1 text-[11px] font-manrope text-[#6d797e] font-semibold">
-              <span className="material-symbols-outlined text-[14px] text-[#00677d]">schedule</span>
-              <span>Today, Oct 1</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3.5">
-            <div className="relative flex-shrink-0">
-              <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-[#00677d]/20 shadow-xs bg-[#00677d] text-white flex items-center justify-center text-xl font-bold">
-                AS
-              </div>
-              <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#00677d] text-white flex items-center justify-center text-[10px] shadow">
-                <span className="material-symbols-outlined text-[10px]">star</span>
-              </div>
-            </div>
-
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between">
-                <h2 className="font-bold text-lg text-[#131b2e] truncate">Ananya Sharma</h2>
-                <span className="px-2 py-0.5 rounded-full bg-[#8debff] text-[#006b7a] font-manrope text-[10px] font-bold">
-                  Pre-K
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 mt-1">
-                <span className="material-symbols-outlined text-[14px] text-[#00677d]">check_circle</span>
-                <span className="text-[11px] font-manrope text-[#3d494d] font-medium">
-                  Present • Checked in at <strong className="text-[#00677d] font-bold">9:05 AM</strong>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Reusable Student Card */}
+        <StudentCard />
 
         {/* Filter Navigation Tabs */}
         <div className="flex items-center gap-1.5 p-1 bg-[#e2e7ff]/60 rounded-xl">

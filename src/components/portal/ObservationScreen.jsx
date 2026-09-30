@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { PortalHeader } from '../layout/PortalHeader';
 import { Button } from '../ui/Button';
 
-export const ObservationScreen = ({ onNavigate }) => {
+export const ObservationScreen = ({ user, onLogout, onNavigate }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [noteText, setNoteText] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -31,20 +32,14 @@ export const ObservationScreen = ({ onNavigate }) => {
 
   return (
     <div className="bg-[#f5f8fc] font-sans text-slate-800 antialiased flex flex-col min-h-screen pb-24 relative select-none">
-      {/* Header */}
-      <header className="bg-[#0076ce] text-white pt-3 pb-3 px-4 shadow-xs flex items-center justify-between sticky top-0 z-30">
-        <div className="flex items-center space-x-3">
-          <button
-            onClick={() => onNavigate('home')}
-            className="p-1 rounded-full hover:bg-white/10 active:scale-95 transition-transform"
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[20px]">arrow_back</span>
-          </button>
-          <h1 className="text-base font-semibold tracking-wide">I Noticed Something</h1>
-        </div>
-        <span className="material-symbols-outlined text-rose-300 text-[20px]">favorite</span>
-      </header>
+      {/* Shared Portal Header */}
+      <PortalHeader
+        user={user}
+        onLogout={onLogout}
+        title="I Noticed Something"
+        showBack
+        onBack={() => onNavigate('home')}
+      />
 
       {/* Main Form */}
       <main className="flex-1 max-w-md sm:max-w-xl mx-auto w-full px-4 pt-4 space-y-4">
