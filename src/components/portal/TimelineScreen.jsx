@@ -74,20 +74,7 @@ export const TimelineScreen = ({ user, onLogout, onNavigate }) => {
         {/* Reusable Student Card */}
         <StudentCard />
 
-        {/* Brand Header */}
-        <section className="flex items-center justify-between bg-white px-3 py-2 rounded-xl shadow-xs border border-slate-200/80">
-          <div className="flex items-center gap-2">
-            <img src={logoImg} alt="NeuroPi Logo" className="h-6 w-auto object-contain" />
-            <span className="text-xs font-bold text-slate-800">Connect</span>
-          </div>
-          <div className="h-4 w-px bg-slate-300"></div>
-          <div className="flex items-center gap-1.5">
-            <div className="leading-tight text-left">
-              <div className="text-[10px] font-bold text-slate-700 leading-none">My School</div>
-              <div className="text-[9px] font-extrabold text-blue-600 tracking-wider">ITALY</div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Growth Trajectory Curve Card */}
         <section className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-xs space-y-3">

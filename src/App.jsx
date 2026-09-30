@@ -132,7 +132,6 @@ export default function App() {
 
         <div className="w-full bg-white rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-100 p-6 sm:p-8 flex flex-col gap-6">
           <LoginForm onLoginSuccess={(user) => setCurrentUser(user)} />
-          <AuthFooter />
         </div>
 
         <p className="text-xs text-slate-400 text-center font-manrope">

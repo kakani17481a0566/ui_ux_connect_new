@@ -1,5 +1,6 @@
 import React from 'react';
 import defaultAvatar from '../../assets/student-avatar.png';
+import clockIcon from '../../assets/icons/clock_icon.png';
 
 /**
  * Standardized Reusable Student Card used consistently across all portal pages
@@ -21,8 +22,8 @@ export const StudentCard = ({
           <span className="w-2 h-2 rounded-full bg-[#00b4d8] animate-pulse"></span>
           <span>Live • {room}</span>
         </div>
-        <div className="flex items-center gap-1 text-[11px] font-manrope text-[#6d797e] font-semibold">
-          <span className="material-symbols-outlined text-[14px] text-[#00677d]">schedule</span>
+        <div className="flex items-center gap-1.5 text-[11px] font-manrope text-[#6d797e] font-semibold">
+          <img src={clockIcon} alt="Clock" className="w-[18px] h-[18px] min-w-[18px] max-w-[18px] object-contain flex-shrink-0" />
           <span>Today, Oct 1</span>
         </div>
       </div>

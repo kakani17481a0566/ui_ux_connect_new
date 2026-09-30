@@ -7,6 +7,7 @@ import toiletingIcon from '../../assets/icons/toileting_icon.png';
 import restNapIcon from '../../assets/icons/rest_nap_icon.png';
 import waterIntakeIcon from '../../assets/icons/water_intake_icon.png';
 import tryAtHomeIcon from '../../assets/icons/try_at_home_icon.png';
+import momentsFromTodayIcon from '../../assets/icons/moments_from_today_icon.png';
 
 const VITALS_DATA = [
   { title: 'Meals', value: 'Ate well', status: '100% finished', statusColor: 'text-[#006877]', icon: mealsIcon },
@@ -203,8 +204,8 @@ export const ParentDashboard = ({ user, onLogout }) => {
         {/* Moments from Today Gallery Strip */}
         <div className="bg-white rounded-xl p-3.5 shadow-xs space-y-2.5 border border-slate-100">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[18px] text-[#00677d]">photo_library</span>
+            <div className="flex items-center gap-2">
+              <img src={momentsFromTodayIcon} alt="Moments from Today" className="w-8 h-8 object-contain" />
               <h3 className="font-bold text-sm text-[#131b2e]">Moments from Today</h3>
             </div>
             <button onClick={() => showToast("Opening 4 high-res gallery photos...")} className="flex items-center text-xs font-manrope font-bold text-[#00677d] hover:text-[#006877]">
