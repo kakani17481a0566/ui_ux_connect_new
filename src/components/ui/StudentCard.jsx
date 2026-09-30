@@ -1,4 +1,5 @@
 import React from 'react';
+import defaultAvatar from '../../assets/student-avatar.png';
 
 /**
  * Standardized Reusable Student Card used consistently across all portal pages
@@ -9,8 +10,7 @@ export const StudentCard = ({
   room = 'Room 102 (Sunflowers)',
   status = 'Present',
   checkInTime = '9:05 AM',
-  initials = 'AS',
-  age = '4y 5m',
+  avatar = defaultAvatar,
   className = ''
 }) => {
   return (
@@ -27,14 +27,18 @@ export const StudentCard = ({
         </div>
       </div>
 
-      {/* Student Details & Avatar */}
+      {/* Student Details & Photo Avatar */}
       <div className="flex items-center gap-3.5">
         <div className="relative flex-shrink-0">
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full overflow-hidden ring-2 ring-[#00677d]/20 shadow-xs bg-[#00677d] text-white flex items-center justify-center text-xl font-bold">
-            {initials}
+          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full overflow-hidden ring-2 ring-[#00677d]/30 shadow-sm bg-slate-100">
+            <img
+              src={avatar}
+              alt={name}
+              className="w-full h-full object-cover select-none"
+            />
           </div>
-          <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#00677d] text-white flex items-center justify-center text-[9px] shadow">
-            <span className="material-symbols-outlined text-[10px]">star</span>
+          <div className="absolute -bottom-0.5 -right-0.5 w-4.5 h-4.5 rounded-full bg-[#00677d] text-white flex items-center justify-center text-[9px] shadow-sm">
+            <span className="material-symbols-outlined text-[11px]">star</span>
           </div>
         </div>
 
