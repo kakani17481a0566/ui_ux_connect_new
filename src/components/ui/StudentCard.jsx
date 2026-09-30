@@ -30,11 +30,11 @@ export const StudentCard = ({
       {/* Student Details & Photo Avatar */}
       <div className="flex items-center gap-3.5">
         <div className="relative flex-shrink-0">
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full overflow-hidden ring-2 ring-[#00677d]/30 shadow-sm bg-slate-100">
+          <div className="w-14 h-14 min-w-[56px] min-h-[56px] max-w-[56px] max-h-[56px] rounded-full overflow-hidden ring-2 ring-[#00677d]/40 shadow-sm bg-slate-100 flex items-center justify-center">
             <img
               src={avatar}
               alt={name}
-              className="w-full h-full object-cover select-none"
+              className="w-full h-full max-w-full max-h-full object-cover object-center select-none rounded-full"
             />
           </div>
           <div className="absolute -bottom-0.5 -right-0.5 w-4.5 h-4.5 rounded-full bg-[#00677d] text-white flex items-center justify-center text-[9px] shadow-sm">

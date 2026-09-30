@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import { PortalHeader } from '../layout/PortalHeader';
 import { StudentCard } from '../ui/StudentCard';
+import { VitalCard } from '../ui/VitalCard';
+import mealsIcon from '../../assets/icons/meals_icon.png';
+import toiletingIcon from '../../assets/icons/toileting_icon.png';
+import restNapIcon from '../../assets/icons/rest_nap_icon.png';
+import waterIntakeIcon from '../../assets/icons/water_intake_icon.png';
+import tryAtHomeIcon from '../../assets/icons/try_at_home_icon.png';
+
+const VITALS_DATA = [
+  { title: 'Meals', value: 'Ate well', status: '100% finished', statusColor: 'text-[#006877]', icon: mealsIcon },
+  { title: 'Water Intake', value: '3 Glasses', status: 'Hydrated', statusColor: 'text-[#00677d]', icon: waterIntakeIcon },
+  { title: 'Rest / Nap', value: '45 mins', status: 'Peaceful', statusColor: 'text-[#2c6480]', icon: restNapIcon },
+  { title: 'Toileting', value: 'Regular', status: 'Independent', statusColor: 'text-[#00677d]', icon: toiletingIcon },
+];
 
 export const ParentDashboard = ({ user, onLogout }) => {
   const [activeTab, setActiveTab] = useState('Today');
@@ -54,57 +67,16 @@ export const ParentDashboard = ({ user, onLogout }) => {
           </div>
 
           <div className="grid grid-cols-2 gap-2.5">
-            <div className="bg-white rounded-xl p-3 shadow-xs flex items-center justify-between border border-slate-100">
-              <div className="space-y-1">
-                <span className="text-[10px] font-manrope font-bold text-[#6d797e] block uppercase tracking-wider">Meals</span>
-                <p className="font-bold text-sm text-[#131b2e] leading-none">Ate well</p>
-                <div className="flex items-center gap-1 text-[11px] font-manrope text-[#006877] font-semibold">
-                  <span>100% finished</span>
-                </div>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-[#a3eeff]/40 flex items-center justify-center text-lg shadow-xs flex-shrink-0">
-                🥗
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-3 shadow-xs flex items-center justify-between border border-slate-100">
-              <div className="space-y-1">
-                <span className="text-[10px] font-manrope font-bold text-[#6d797e] block uppercase tracking-wider">Water Intake</span>
-                <p className="font-bold text-sm text-[#131b2e] leading-none">3 Glasses</p>
-                <div className="flex items-center gap-1 text-[11px] font-manrope text-[#00677d] font-semibold">
-                  <span>Hydrated</span>
-                </div>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-[#00677d]/20 flex items-center justify-center text-lg shadow-xs flex-shrink-0">
-                💧
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-3 shadow-xs flex items-center justify-between border border-slate-100">
-              <div className="space-y-1">
-                <span className="text-[10px] font-manrope font-bold text-[#6d797e] block uppercase tracking-wider">Rest / Nap</span>
-                <p className="font-bold text-sm text-[#131b2e] leading-none">45 mins</p>
-                <div className="flex items-center gap-1 text-[11px] font-manrope text-[#2c6480] font-semibold">
-                  <span>Peaceful</span>
-                </div>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-[#e2e7ff] flex items-center justify-center text-lg shadow-xs flex-shrink-0">
-                🌙
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-3 shadow-xs flex items-center justify-between border border-slate-100">
-              <div className="space-y-1">
-                <span className="text-[10px] font-manrope font-bold text-[#6d797e] block uppercase tracking-wider">Toileting</span>
-                <p className="font-bold text-sm text-[#131b2e] leading-none">Regular</p>
-                <div className="flex items-center gap-1 text-[11px] font-manrope text-[#00677d] font-semibold">
-                  <span>Independent</span>
-                </div>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-[#8debff] flex items-center justify-center text-lg shadow-xs flex-shrink-0">
-                🧼
-              </div>
-            </div>
+            {VITALS_DATA.map((vital) => (
+              <VitalCard
+                key={vital.title}
+                title={vital.title}
+                value={vital.value}
+                status={vital.status}
+                statusColor={vital.statusColor}
+                icon={vital.icon}
+              />
+            ))}
           </div>
 
           <div className="bg-white rounded-xl p-3 shadow-xs flex items-center justify-between border border-slate-100">
@@ -190,8 +162,8 @@ export const ParentDashboard = ({ user, onLogout }) => {
         {/* Try at Home Extension Card */}
         <div className="bg-[#a3eeff]/40 rounded-xl p-4 shadow-xs space-y-3">
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#8debff] flex items-center justify-center text-[#006b7a] flex-shrink-0 shadow-xs">
-              <span className="material-symbols-outlined text-[22px]">cottage</span>
+            <div className="w-14 h-14 min-w-[56px] min-h-[56px] flex items-center justify-center flex-shrink-0">
+              <img src={tryAtHomeIcon} alt="Try at Home" className="w-full h-full object-contain drop-shadow-sm" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">

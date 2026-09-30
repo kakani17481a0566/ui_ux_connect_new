@@ -7,6 +7,10 @@ import { TimelineScreen } from './components/portal/TimelineScreen';
 import { StoryTimeScreen } from './components/portal/StoryTimeScreen';
 import { ObservationScreen } from './components/portal/ObservationScreen';
 import { authService } from './api/authService';
+import homeNavIcon from './assets/icons/home_nav.png';
+import timelineNavIcon from './assets/icons/timeline_nav.png';
+import storiesNavIcon from './assets/icons/stories_nav.png';
+import observeNavIcon from './assets/icons/observe_nav.png';
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -49,49 +53,69 @@ export default function App() {
               <button
                 type="button"
                 onClick={() => setCurrentScreen('home')}
-                className={`flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 transition-colors ${
-                  currentScreen === 'home' ? 'text-[#00677d] font-bold' : 'text-slate-400 hover:text-slate-600'
+                className={`flex flex-col items-center justify-center min-w-[64px] h-14 transition-all ${
+                  currentScreen === 'home' ? 'text-[#00677d] font-bold' : 'text-slate-500 hover:text-slate-700'
                 }`}
               >
-                <span className="material-symbols-outlined text-[22px]">cottage</span>
-                <span className="text-[10px] font-manrope">Home</span>
-                {currentScreen === 'home' && <span className="w-1 h-1 rounded-full bg-[#00677d] mt-0.5"></span>}
+                <img
+                  src={homeNavIcon}
+                  alt="Home"
+                  className={`h-11 w-auto object-contain transition-all ${
+                    currentScreen === 'home' ? 'opacity-100 scale-105' : 'opacity-75 hover:opacity-100'
+                  }`}
+                />
+                {currentScreen === 'home' && <span className="w-1 h-1 rounded-full bg-[#00677d] -mt-0.5"></span>}
               </button>
 
               <button
                 type="button"
                 onClick={() => setCurrentScreen('timeline')}
-                className={`flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 transition-colors ${
-                  currentScreen === 'timeline' ? 'text-[#00677d] font-bold' : 'text-slate-400 hover:text-slate-600'
+                className={`flex flex-col items-center justify-center min-w-[64px] h-14 transition-all ${
+                  currentScreen === 'timeline' ? 'text-[#00677d] font-bold' : 'text-slate-500 hover:text-slate-700'
                 }`}
               >
-                <span className="material-symbols-outlined text-[22px]">auto_stories</span>
-                <span className="text-[10px] font-manrope">Timeline</span>
-                {currentScreen === 'timeline' && <span className="w-1 h-1 rounded-full bg-[#00677d] mt-0.5"></span>}
+                <img
+                  src={timelineNavIcon}
+                  alt="Timeline"
+                  className={`h-11 w-auto object-contain transition-all ${
+                    currentScreen === 'timeline' ? 'opacity-100 scale-105' : 'opacity-75 hover:opacity-100'
+                  }`}
+                />
+                {currentScreen === 'timeline' && <span className="w-1 h-1 rounded-full bg-[#00677d] -mt-0.5"></span>}
               </button>
 
               <button
                 type="button"
                 onClick={() => setCurrentScreen('stories')}
-                className={`flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 transition-colors ${
-                  currentScreen === 'stories' ? 'text-[#00677d] font-bold' : 'text-slate-400 hover:text-slate-600'
+                className={`flex flex-col items-center justify-center min-w-[64px] h-14 transition-all ${
+                  currentScreen === 'stories' ? 'text-[#00677d] font-bold' : 'text-slate-500 hover:text-slate-700'
                 }`}
               >
-                <span className="material-symbols-outlined text-[22px]">menu_book</span>
-                <span className="text-[10px] font-manrope">Stories</span>
-                {currentScreen === 'stories' && <span className="w-1 h-1 rounded-full bg-[#00677d] mt-0.5"></span>}
+                <img
+                  src={storiesNavIcon}
+                  alt="Stories"
+                  className={`h-11 w-auto object-contain transition-all ${
+                    currentScreen === 'stories' ? 'opacity-100 scale-105' : 'opacity-75 hover:opacity-100'
+                  }`}
+                />
+                {currentScreen === 'stories' && <span className="w-1 h-1 rounded-full bg-[#00677d] -mt-0.5"></span>}
               </button>
 
               <button
                 type="button"
                 onClick={() => setCurrentScreen('observation')}
-                className={`flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 transition-colors ${
-                  currentScreen === 'observation' ? 'text-[#00677d] font-bold' : 'text-slate-400 hover:text-slate-600'
+                className={`flex flex-col items-center justify-center min-w-[64px] h-14 transition-all ${
+                  currentScreen === 'observation' ? 'text-[#00677d] font-bold' : 'text-slate-500 hover:text-slate-700'
                 }`}
               >
-                <span className="material-symbols-outlined text-[22px]">rate_review</span>
-                <span className="text-[10px] font-manrope">Observe</span>
-                {currentScreen === 'observation' && <span className="w-1 h-1 rounded-full bg-[#00677d] mt-0.5"></span>}
+                <img
+                  src={observeNavIcon}
+                  alt="Observe"
+                  className={`h-11 w-auto object-contain transition-all ${
+                    currentScreen === 'observation' ? 'opacity-100 scale-105' : 'opacity-75 hover:opacity-100'
+                  }`}
+                />
+                {currentScreen === 'observation' && <span className="w-1 h-1 rounded-full bg-[#00677d] -mt-0.5"></span>}
               </button>
             </div>
           </nav>

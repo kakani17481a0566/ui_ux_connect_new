@@ -1,5 +1,6 @@
 import React from 'react';
 import logoImg from '../../assets/neuropi-logo.png';
+import bellIcon from '../../assets/icons/notification_bell_icon.png';
 
 export const PortalHeader = ({ user, onLogout, title, showBack, onBack }) => {
   const initial = (user?.firstName || 'C').charAt(0).toUpperCase();
@@ -32,10 +33,10 @@ export const PortalHeader = ({ user, onLogout, title, showBack, onBack }) => {
             type="button"
             aria-label="Notifications"
             onClick={() => alert("Notifications: 2 unread school updates")}
-            className="relative w-10 h-10 flex items-center justify-center rounded-full bg-[#e2e7ff]/60 text-[#3d494d] hover:text-[#00677d] transition-colors"
+            className="relative w-8 h-8 flex items-center justify-center hover:scale-110 transition-transform p-0.5"
           >
-            <span className="material-symbols-outlined text-[20px]">notifications</span>
-            <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#ba1a1a] ring-2 ring-[#faf8ff]"></span>
+            <img src={bellIcon} alt="Notifications" className="w-7 h-7 object-contain drop-shadow-xs" />
+            <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-[#ba1a1a] ring-2 ring-[#faf8ff]"></span>
           </button>
 
           {/* User Profile Initial & Logout */}
