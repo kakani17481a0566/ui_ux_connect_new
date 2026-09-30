@@ -17,19 +17,8 @@ export const ParentDashboard = ({ user, onLogout }) => {
 
   return (
     <div className="bg-[#faf8ff] font-sans text-[#131b2e] antialiased flex flex-col min-h-screen pb-24 relative select-none">
-      {/* Fixed Header */}
-      <header className="fixed top-0 w-full z-50 bg-[#faf8ff]/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-        {/* Status Bar */}
-        <div className="w-full max-w-md mx-auto flex items-center justify-between px-6 pt-2 pb-1 text-[#131b2e]">
-          <span className="text-[13px] font-bold tracking-tight font-sans">9:41</span>
-          <div className="flex items-center gap-1.5 text-[#131b2e]">
-            <span className="material-symbols-outlined text-[15px]">signal_cellular_alt</span>
-            <span className="material-symbols-outlined text-[15px]">wifi</span>
-            <span className="material-symbols-outlined text-[17px]">battery_full</span>
-          </div>
-        </div>
-
-        {/* App Title Header */}
+      {/* Clean Web Header */}
+      <header className="sticky top-0 w-full z-50 bg-[#faf8ff]/90 backdrop-blur-xl border-b border-slate-200/60 shadow-xs">
         <div className="h-14 max-w-md mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-xl bg-[#00677d]/20 flex items-center justify-center p-1 shadow-xs">
@@ -43,6 +32,7 @@ export const ParentDashboard = ({ user, onLogout }) => {
 
           <div className="flex items-center gap-2">
             <button
+              type="button"
               aria-label="Notifications"
               onClick={() => showToast("Notifications: 2 unread school updates")}
               className="relative w-10 h-10 flex items-center justify-center rounded-full bg-[#e2e7ff]/60 text-[#3d494d] hover:text-[#00677d] transition-colors"
@@ -70,7 +60,7 @@ export const ParentDashboard = ({ user, onLogout }) => {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col relative w-full max-w-md mx-auto pt-20 pb-4 px-4 space-y-4">
+      <main className="flex-1 flex flex-col relative w-full max-w-md mx-auto pt-4 pb-4 px-4 space-y-4">
         {/* Live Room Status Card */}
         <div className="bg-white rounded-xl p-3.5 shadow-xs space-y-3 border border-slate-100">
           <div className="flex items-center justify-between">
@@ -80,7 +70,7 @@ export const ParentDashboard = ({ user, onLogout }) => {
             </div>
             <div className="flex items-center gap-1 text-[11px] font-manrope text-[#6d797e] font-semibold">
               <span className="material-symbols-outlined text-[14px] text-[#00677d]">schedule</span>
-              <span>Today, May 26</span>
+              <span>Today, Oct 1</span>
             </div>
           </div>
 
@@ -116,6 +106,7 @@ export const ParentDashboard = ({ user, onLogout }) => {
           {['Today', 'Learning', 'Gallery', 'Messages'].map((tab) => (
             <button
               key={tab}
+              type="button"
               onClick={() => setActiveTab(tab)}
               className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all text-center ${
                 activeTab === tab
@@ -132,7 +123,7 @@ export const ParentDashboard = ({ user, onLogout }) => {
         <div className="space-y-2">
           <div className="flex items-center justify-between px-0.5">
             <div className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[15px] text-[#00677d]">vital_signs</span>
+              <span className="material-symbols-outlined text-[18px] text-[#00677d]">vital_signs</span>
               <span className="text-[11px] font-manrope font-bold uppercase tracking-wider text-[#6d797e]">
                 Daily Routine & Vitals
               </span>
@@ -430,40 +421,6 @@ export const ParentDashboard = ({ user, onLogout }) => {
           </p>
         </div>
       </main>
-
-      {/* Floating Bottom Nav Bar */}
-      <nav className="fixed bottom-0 w-full z-50 bg-[#faf8ff]/90 backdrop-blur-xl border-t border-slate-200/80 shadow-[0_-2px_12px_rgba(0,0,0,0.05)]">
-        <div className="max-w-md mx-auto flex justify-around items-center h-16 px-2">
-          <button className="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-[#00677d] font-bold">
-            <span className="material-symbols-outlined text-[24px]">cottage</span>
-            <span className="text-[10px] font-manrope font-bold">Home</span>
-            <span className="w-1 h-1 rounded-full bg-[#00677d] mt-0.5"></span>
-          </button>
-
-          <button onClick={() => showToast("Navigating to Timeline")} className="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-[#3d494d] hover:text-[#00677d]">
-            <span className="material-symbols-outlined text-[22px]">auto_stories</span>
-            <span className="text-[10px] font-manrope font-medium">Timeline</span>
-          </button>
-
-          <button onClick={() => showToast("Navigating to Ananya Profile")} className="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-[#3d494d] hover:text-[#00677d]">
-            <span className="material-symbols-outlined text-[22px]">face</span>
-            <span className="text-[10px] font-manrope font-medium">Ananya</span>
-          </button>
-
-          <button onClick={() => showToast("Opening Educator Chat")} className="relative flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-[#3d494d] hover:text-[#00677d]">
-            <span className="material-symbols-outlined text-[22px]">forum</span>
-            <span className="absolute top-1 right-5 w-4 h-4 rounded-full bg-[#00677d] text-white text-[9px] font-manrope font-bold flex items-center justify-center">
-              2
-            </span>
-            <span className="text-[10px] font-manrope font-medium">Chat</span>
-          </button>
-
-          <button onClick={() => showToast("More options menu")} className="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-[#3d494d] hover:text-[#00677d]">
-            <span className="material-symbols-outlined text-[22px]">more_horiz</span>
-            <span className="text-[10px] font-manrope font-medium">More</span>
-          </button>
-        </div>
-      </nav>
 
       {/* Toast Feedback Notification */}
       {toastMessage && (
